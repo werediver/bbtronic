@@ -23,13 +23,17 @@ access_token = yyy
 You can list the open pull-requests by using the `list` command:
 
 ```
-$ bbtronic list server1/PROJ/repo
+$ python -m bbtronic.cli list server1/PROJ/repo
 ```
 
 It shows IDs and titles of the open pull-requests, so that you can proceed with other commands, the key of which is `automerge`:
 
 ```
-$ bbtronic automerge server1/PROJ/repo/1234
+$ python -m bbtronic.cli automerge server1/PROJ/repo/1234
 ```
 
 It periodically checks whether the pull-request is ready to be merged and merges it as soon as possible.
+
+# Dependencies
+
+`bbtronic` depends on [requests](https://github.com/psf/requests) package to perform HTTP requests.
