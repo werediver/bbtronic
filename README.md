@@ -18,18 +18,28 @@ base_uri = https://server2.com
 access_token = yyy
 ```
 
+## Building
+
+`bbtronic` can be packaged as a single executable file (thanks to [pex](https://github.com/pantsbuild/pex)) by running the build script:
+
+```
+$ ./mk.sh
+``` 
+
+The build script generates a single file `bin/bbtronic`, which you can link or copy into `~/bin/` or other appropriate directory _that is included in your `PATH` environment variable_.
+
 ## Usage
 
 You can list the open pull-requests by using the `list` command:
 
 ```
-$ python -m bbtronic.cli list server1/PROJ/repo
+$ bbtronic list server1/PROJ/repo
 ```
 
 It shows IDs and titles of the open pull-requests, so that you can proceed with other commands, the key of which is `automerge`:
 
 ```
-$ python -m bbtronic.cli automerge server1/PROJ/repo/1234
+$ bbtronic automerge server1/PROJ/repo/1234
 ```
 
 It periodically checks whether the pull-request is ready to be merged and merges it as soon as possible.
