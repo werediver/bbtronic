@@ -30,17 +30,17 @@ def _configure_pr_cmd_parser(p: ArgumentParser) -> ArgumentParser:
     return p
 
 
+@dataclass
+class RunConfig:
+    command: Command
+    path: Union[RepositoryPath, PullRequestPath]
+
+
 class Command(Enum):
     LIST = "list"
     CHECK = "check"
     MERGE = "merge"
     AUTOMERGE = "automerge"
-
-
-@dataclass
-class RunConfig:
-    command: Command
-    path: Union[RepositoryPath, PullRequestPath]
 
 
 @dataclass

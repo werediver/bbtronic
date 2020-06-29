@@ -7,6 +7,10 @@ from bbtronic.types import BitbucketPage, PullRequest, PullRequestMergeStatus, B
 
 
 class BitbucketClient:
+    """
+    See the Core REST API documentation at https://developer.atlassian.com/server/bitbucket/reference/rest-api/
+    """
+
     base_uri: str
     _session: requests.Session
 
